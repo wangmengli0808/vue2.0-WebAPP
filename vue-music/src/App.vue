@@ -3,7 +3,10 @@
     <m-header></m-header>
     <tab></tab>
     <!--主体部分-->
-    <router-view></router-view>
+    <keep-alive>
+      <!--keep-alive：缓存-->
+      <router-view></router-view>
+    </keep-alive>
   </div>
 </template>
 
