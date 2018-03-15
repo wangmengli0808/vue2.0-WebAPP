@@ -26,7 +26,7 @@ export function getData(el, name, val) {
 
 let elementStyle = document.createElement('div').style
 
-let vendor = (() => {
+let vendor = (() => { // 浏览器供应商 浏览器内核
   let transformNames = {
     webkit: 'webkitTransform',
     Moz: 'MozTransform',
@@ -41,7 +41,7 @@ let vendor = (() => {
     }
   }
 
-  return false
+  return false // 如果都不支持
 })()
 
 export function prefixStyle(style) {

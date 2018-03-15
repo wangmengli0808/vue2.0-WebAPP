@@ -9,7 +9,9 @@
             <li class="list-group" v-for="(group, index) in data" :key="index" ref="listGroup">
                 <h2 class="list-group-title">{{group.title}}</h2>
                 <ul>
-                    <li class="list-group-item" v-for="(item, idx) in group.items" :key="idx">
+                    <li class="list-group-item"
+                        v-for="(item, idx) in group.items" :key="idx"
+                        @click="selectItem(item)">
                         <img class="avatar" v-lazy="item.avatar" alt="">
                         <span class="name">{{item.name}}</span>
                     </li>
@@ -98,6 +100,9 @@ export default {
     },
     scroll(pos) {
       this.scrollY = pos.y
+    },
+    selectItem(item) {
+      this.$emit('select', item)
     },
     _scrollTo(index) { // 滚动到相对应的位置
       console.log(index)
